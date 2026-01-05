@@ -1,36 +1,19 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ArrowRight, Info, Calendar, MapPin, Sparkles } from "lucide-react";
-import { ParallaxBackground } from "@/components/ui/parallax-background";
+import { ParallaxWaves } from "@/components/ui/parallax-waves";
 
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-primary via-primary/95 to-accent text-primary-foreground overflow-hidden">
-      <ParallaxBackground
-        className="opacity-60"
-        circleClassName="bg-white/10"
-      />
-      <div className="absolute inset-0 opacity-20">
+    <section className="relative min-h-[90vh] flex flex-col justify-center bg-gradient-to-br from-primary via-primary/95 to-accent text-primary-foreground overflow-hidden">
+      {/* Background with Parallax Waves - Positioned to cover bottom area */}
+      <ParallaxWaves />
+
+      <div className="absolute inset-0 opacity-20 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)]" />
       </div>
 
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-[10%] w-2 h-2 bg-white rounded-full animate-pulse opacity-60" />
-        <div
-          className="absolute top-40 right-[15%] w-3 h-3 bg-white rounded-full animate-pulse opacity-40"
-          style={{ animationDelay: "0.5s" }}
-        />
-        <div
-          className="absolute bottom-32 left-[20%] w-2 h-2 bg-white rounded-full animate-pulse opacity-50"
-          style={{ animationDelay: "1s" }}
-        />
-        <div
-          className="absolute top-1/2 right-[25%] w-2 h-2 bg-white rounded-full animate-pulse opacity-70"
-          style={{ animationDelay: "1.5s" }}
-        />
-      </div>
-
-      <div className="container relative mx-auto px-4 py-20 md:py-28 lg:py-36">
+      <div className="container relative mx-auto px-4 py-20 md:py-28 lg:py-36 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-10">
           <div className="flex justify-center mb-8">
             <Image
