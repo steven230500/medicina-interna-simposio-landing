@@ -36,7 +36,7 @@ export function LocationSection() {
             <CardContent className="p-0">
               <div className="relative w-full h-[450px] bg-muted">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.589139599544!2d-76.54416042424853!3d3.374921696528775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a1c868019045%3A0xc3af344485775d73!2sHospital%20Universitario%20Del%20Valle%20Evaristo%20Garc%C3%ADa!5e0!3m2!1ses!2sco!4v1709664567890!5m2!1ses!2sco"
+                  src="https://maps.google.com/maps?q=Hospital+Universitario+del+Valle+Evaristo+Garc%C3%ADa&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

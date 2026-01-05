@@ -1,10 +1,15 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ArrowRight, Info, Calendar, MapPin, Sparkles } from "lucide-react";
+import { ParallaxBackground } from "@/components/ui/parallax-background";
 
 export function HeroSection() {
   return (
     <section className="relative bg-gradient-to-br from-primary via-primary/95 to-accent text-primary-foreground overflow-hidden">
+      <ParallaxBackground
+        className="opacity-60"
+        circleClassName="bg-white/10"
+      />
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)]" />
       </div>

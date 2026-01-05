@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Zap, TrendingUp, Clock, MessageCircle } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const pricingPhases = [
   {
@@ -77,67 +78,68 @@ export function PricingSection() {
           {pricingPhases.map((phase, index) => {
             const PhaseIcon = phase.icon;
             return (
-              <Card
-                key={index}
-                className={`relative transition-all hover:shadow-2xl ${
-                  phase.highlighted
-                    ? "border-primary border-2 shadow-xl md:scale-105 bg-gradient-to-br from-background to-primary/10"
-                    : "hover:border-primary/50"
-                }`}
-              >
-                {phase.badge && (
-                  <div
-                    className={`absolute -top-4 left-1/2 -translate-x-1/2 ${phase.badgeColor} text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2`}
-                  >
-                    <PhaseIcon className="w-4 h-4" />
-                    {phase.badge}
-                  </div>
-                )}
-                <CardHeader className="text-center pb-6 pt-8">
-                  <CardTitle className="text-2xl font-bold">
-                    {phase.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm mt-2">
-                    {phase.subtitle}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  {phase.prices.map((price, priceIndex) => (
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <Card
+                  className={`relative transition-all hover:shadow-2xl ${
+                    phase.highlighted
+                      ? "border-primary border-2 shadow-xl md:scale-105 bg-gradient-to-br from-background to-primary/10"
+                      : "hover:border-primary/50"
+                  }`}
+                >
+                  {phase.badge && (
                     <div
-                      key={priceIndex}
-                      className={`flex items-start justify-between gap-3 p-4 rounded-xl transition-all ${
-                        price.featured
-                          ? "bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30 shadow-sm"
-                          : "bg-muted/30"
-                      }`}
+                      className={`absolute -top-4 left-1/2 -translate-x-1/2 ${phase.badgeColor} text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2`}
                     >
-                      <div className="flex items-start gap-3 flex-1">
-                        <Check
-                          className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
-                            price.featured
-                              ? "text-primary"
-                              : "text-muted-foreground"
-                          }`}
-                        />
-                        <span
-                          className={`text-sm leading-relaxed ${
-                            price.featured ? "font-semibold" : ""
-                          }`}
-                        >
-                          {price.label}
-                        </span>
-                      </div>
-                      <span
-                        className={`font-bold text-sm whitespace-nowrap ${
-                          price.featured ? "text-primary text-base" : ""
+                      <PhaseIcon className="w-4 h-4" />
+                      {phase.badge}
+                    </div>
+                  )}
+                  <CardHeader className="text-center pb-6 pt-8">
+                    <CardTitle className="text-2xl font-bold">
+                      {phase.title}
+                    </CardTitle>
+                    <CardDescription className="text-sm mt-2">
+                      {phase.subtitle}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    {phase.prices.map((price, priceIndex) => (
+                      <div
+                        key={priceIndex}
+                        className={`flex items-start justify-between gap-3 p-4 rounded-xl transition-all ${
+                          price.featured
+                            ? "bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30 shadow-sm"
+                            : "bg-muted/30"
                         }`}
                       >
-                        {price.amount}
-                      </span>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
+                        <div className="flex items-start gap-3 flex-1">
+                          <Check
+                            className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
+                              price.featured
+                                ? "text-primary"
+                                : "text-muted-foreground"
+                            }`}
+                          />
+                          <span
+                            className={`text-sm leading-relaxed ${
+                              price.featured ? "font-semibold" : ""
+                            }`}
+                          >
+                            {price.label}
+                          </span>
+                        </div>
+                        <span
+                          className={`font-bold text-sm whitespace-nowrap ${
+                            price.featured ? "text-primary text-base" : ""
+                          }`}
+                        >
+                          {price.amount}
+                        </span>
+                      </div>
+                    ))}
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
             );
           })}
         </div>

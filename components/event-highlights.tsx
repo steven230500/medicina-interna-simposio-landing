@@ -1,5 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Calendar, Laptop, Award } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card";
+import { Calendar, Laptop, Award } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const highlights = [
   {
@@ -20,7 +21,7 @@ const highlights = [
     description: "Certificado de asistencia",
     color: "from-pink-500 to-pink-600",
   },
-]
+];
 
 export function EventHighlights() {
   return (
@@ -30,28 +31,29 @@ export function EventHighlights() {
       <div className="container mx-auto px-4 relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {highlights.map((highlight, index) => {
-            const Icon = highlight.icon
+            const Icon = highlight.icon;
             return (
-              <Card
-                key={index}
-                className="border-2 hover:border-primary transition-all hover:shadow-xl hover:-translate-y-2 group bg-gradient-to-br from-background to-primary/5"
-              >
-                <CardContent className="flex flex-col items-center text-center p-6 space-y-4">
-                  <div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${highlight.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}
-                  >
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="font-bold text-lg">{highlight.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{highlight.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            )
+              <ScrollReveal key={index} delay={index * 0.1} direction="up">
+                <Card className="border-2 hover:border-primary transition-all hover:shadow-xl hover:-translate-y-2 group bg-gradient-to-br from-background to-primary/5 h-full">
+                  <CardContent className="flex flex-col items-center text-center p-6 space-y-4">
+                    <div
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${highlight.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}
+                    >
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="font-bold text-lg">{highlight.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {highlight.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }

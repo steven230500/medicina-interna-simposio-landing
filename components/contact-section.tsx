@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, MessageCircle, Instagram } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export function ContactSection() {
   return (
@@ -13,54 +14,62 @@ export function ContactSection() {
         <div className="max-w-2xl mx-auto">
           <Card className="border-2 shadow-xl bg-gradient-to-br from-background to-primary/5 hover:shadow-2xl transition-shadow">
             <CardContent className="p-8 md:p-12 text-center space-y-6">
-              <div className="flex justify-center mb-4">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-xl opacity-30 animate-pulse" />
-                  <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
-                    <MessageCircle className="w-10 h-10 text-white" />
+              <ScrollReveal delay={0.1}>
+                <div className="flex justify-center mb-4">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-xl opacity-30 animate-pulse" />
+                    <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+                      <MessageCircle className="w-10 h-10 text-white" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
 
               <div className="space-y-3">
-                <h2 className="text-3xl md:text-4xl font-bold text-balance">
-                  ¿Tienes preguntas?
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Estamos aquí para ayudarte. Contáctanos por correo electrónico
-                  y resolveremos todas tus dudas.
-                </p>
+                <ScrollReveal delay={0.2}>
+                  <h2 className="text-3xl md:text-4xl font-bold text-balance">
+                    ¿Tienes preguntas?
+                  </h2>
+                </ScrollReveal>
+                <ScrollReveal delay={0.3}>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Estamos aquí para ayudarte. Contáctanos por correo
+                    electrónico y resolveremos todas tus dudas.
+                  </p>
+                </ScrollReveal>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                <a
-                  href="mailto:simposio14internaunivalle@gmail.com"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-bold text-lg transition-all hover:scale-105 bg-primary/10 px-6 py-4 rounded-xl w-full md:w-auto justify-center"
-                >
-                  <Mail className="w-5 h-5" />
-                  <span>Email</span>
-                </a>
+              <ScrollReveal delay={0.4}>
+                <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                  <a
+                    href="mailto:simposio14internaunivalle@gmail.com"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-bold text-lg transition-all hover:scale-105 bg-primary/10 px-6 py-4 rounded-xl w-full md:w-auto justify-center"
+                  >
+                    <Mail className="w-5 h-5" />
+                    <span>Email</span>
+                  </a>
 
-                <a
-                  href="https://wa.me/573045747146"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-bold text-lg transition-all hover:scale-105 bg-green-50 px-6 py-4 rounded-xl w-full md:w-auto justify-center border border-green-100"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  <span>WhatsApp</span>
-                </a>
+                  <a
+                    href="https://wa.me/573045747146"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-bold text-lg transition-all hover:scale-105 bg-green-50 px-6 py-4 rounded-xl w-full md:w-auto justify-center border border-green-100"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    <span>WhatsApp</span>
+                  </a>
 
-                <a
-                  href="https://www.instagram.com/medicinainternaunivalle?igsh=NWI5OXloNHZ2eDFu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 font-bold text-lg transition-all hover:scale-105 bg-pink-50 px-6 py-4 rounded-xl w-full md:w-auto justify-center border border-pink-100"
-                >
-                  <Instagram className="w-5 h-5" />
-                  <span>Instagram</span>
-                </a>
-              </div>
+                  <a
+                    href="https://www.instagram.com/medicinainternaunivalle?igsh=NWI5OXloNHZ2eDFu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 font-bold text-lg transition-all hover:scale-105 bg-pink-50 px-6 py-4 rounded-xl w-full md:w-auto justify-center border border-pink-100"
+                  >
+                    <Instagram className="w-5 h-5" />
+                    <span>Instagram</span>
+                  </a>
+                </div>
+              </ScrollReveal>
             </CardContent>
           </Card>
         </div>
