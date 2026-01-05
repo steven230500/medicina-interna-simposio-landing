@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Mail, MessageCircle } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card";
+import { Mail, MessageCircle, Instagram } from "lucide-react";
 
 export function ContactSection() {
   return (
@@ -23,23 +23,48 @@ export function ContactSection() {
               </div>
 
               <div className="space-y-3">
-                <h2 className="text-3xl md:text-4xl font-bold text-balance">¿Tienes preguntas?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-balance">
+                  ¿Tienes preguntas?
+                </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Estamos aquí para ayudarte. Contáctanos por correo electrónico y resolveremos todas tus dudas.
+                  Estamos aquí para ayudarte. Contáctanos por correo electrónico
+                  y resolveremos todas tus dudas.
                 </p>
               </div>
 
-              <a
-                href="mailto:simposio14internaunivalle@gmail.com"
-                className="inline-flex items-center gap-3 text-primary hover:text-primary/80 font-bold text-lg transition-all hover:scale-105 bg-primary/10 px-6 py-4 rounded-xl"
-              >
-                <Mail className="w-6 h-6" />
-                simposio14internaunivalle@gmail.com
-              </a>
+              <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a
+                  href="mailto:simposio14internaunivalle@gmail.com"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-bold text-lg transition-all hover:scale-105 bg-primary/10 px-6 py-4 rounded-xl w-full md:w-auto justify-center"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>Email</span>
+                </a>
+
+                <a
+                  href="https://wa.me/573045747146"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-bold text-lg transition-all hover:scale-105 bg-green-50 px-6 py-4 rounded-xl w-full md:w-auto justify-center border border-green-100"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>WhatsApp</span>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/medicinainternaunivalle?igsh=NWI5OXloNHZ2eDFu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 font-bold text-lg transition-all hover:scale-105 bg-pink-50 px-6 py-4 rounded-xl w-full md:w-auto justify-center border border-pink-100"
+                >
+                  <Instagram className="w-5 h-5" />
+                  <span>Instagram</span>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>
       </div>
     </section>
-  )
+  );
 }

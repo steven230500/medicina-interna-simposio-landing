@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, Zap, TrendingUp, Clock } from "lucide-react";
+import { Check, Zap, TrendingUp, Clock, MessageCircle } from "lucide-react";
 
 const pricingPhases = [
   {
@@ -147,19 +147,37 @@ export function PricingSection() {
             *El combo incluye acceso completo al Simposio + Talleres
             especializados
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="text-lg px-10 py-7 h-auto font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
-          >
-            <a
-              href="https://forms.gle/ExEzybUFxahugFax5"
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <Button
+              asChild
+              size="lg"
+              className="w-full md:w-auto text-lg px-8 py-6 h-auto font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all text-wrap text-center"
             >
-              Ir al formulario de inscripción
-            </a>
-          </Button>
+              <a
+                href="https://forms.gle/ExEzybUFxahugFax5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ir al formulario de inscripción
+              </a>
+            </Button>
+
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="w-full md:w-auto text-lg px-8 py-6 h-auto font-medium border-2 hover:bg-muted text-wrap text-center"
+            >
+              <a
+                href="https://wa.me/573045747146?text=Hola,%20ya%20realicé%20el%20pago%20de%20mi%20inscripción.%20Adjunto%20el%20comprobante."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="w-5 h-5 mr-2 text-green-600 shrink-0" />
+                <span>Ya pagué? Enviar comprobante</span>
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
