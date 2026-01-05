@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { MapPin, Navigation, Clock } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { MapPin, Navigation, Clock } from "lucide-react";
 
 export function LocationSection() {
   return (
@@ -16,12 +16,17 @@ export function LocationSection() {
           <div className="flex justify-center">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/10 to-accent/10 px-5 py-2 rounded-full border border-primary/20">
               <MapPin className="w-4 h-4 text-primary" />
-              <span className="text-sm font-bold text-primary">Ubicación del Evento</span>
+              <span className="text-sm font-bold text-primary">
+                Ubicación del Evento
+              </span>
             </div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-balance">¿Dónde nos encontraremos?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-balance">
+            ¿Dónde nos encontraremos?
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            El evento se realizará en las instalaciones de la Universidad del Valle
+            El evento se realizará en las instalaciones del Hospital
+            Universitario del Valle Evaristo García Valle
           </p>
         </div>
 
@@ -31,7 +36,7 @@ export function LocationSection() {
             <CardContent className="p-0">
               <div className="relative w-full h-[450px] bg-muted">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.5893574831674!2d-76.53398892424853!3d3.3748668965288706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a1575b94bd57%3A0x8d1f1c9c5b5e5f5f!2sUniversidad%20del%20Valle!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.589139599544!2d-76.54416042424853!3d3.374921696528775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a1c868019045%3A0xc3af344485775d73!2sHospital%20Universitario%20Del%20Valle%20Evaristo%20Garc%C3%ADa!5e0!3m2!1ses!2sco!4v1709664567890!5m2!1ses!2sco"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -56,7 +61,7 @@ export function LocationSection() {
                   <div className="space-y-1">
                     <h3 className="font-bold text-lg">Sede del Evento</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Universidad del Valle
+                      Hospital Universitario del Valle Evaristo García
                       <br />
                       Cali, Valle del Cauca
                     </p>
@@ -73,7 +78,9 @@ export function LocationSection() {
                   </div>
                   <div className="space-y-1">
                     <h3 className="font-bold text-lg">Horario</h3>
-                    <p className="text-muted-foreground leading-relaxed">Información completa próximamente</p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Información del horario próximamente
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -86,7 +93,11 @@ export function LocationSection() {
             className="w-full shadow-lg hover:shadow-xl transition-all group bg-gradient-to-r from-primary to-accent"
             asChild
           >
-            <a href="https://maps.app.goo.gl/hSnwBefuYQu7ot448" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://maps.app.goo.gl/UfPVenmYAU39PBGk8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Navigation className="w-4 h-4 mr-2 group-hover:rotate-45 transition-transform" />
               Abrir en Google Maps
             </a>
@@ -94,5 +105,5 @@ export function LocationSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
