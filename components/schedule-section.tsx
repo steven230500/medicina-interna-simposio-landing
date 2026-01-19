@@ -6,7 +6,7 @@ import { scheduleData, ScheduleItem } from "@/data/schedule";
 import { cn } from "@/lib/utils"; // Assuming this exists, standard in shadcn/ui or modern next/tailwind setups. If not, I'll fallback to clsx or local helper.
 // Wait, I didn't check for lib/utils. I should probably check OR just define a utility function locally or check existing components.
 // Let me quickly check an existing component component to see imports.
-import { Calendar, Clock, MapPin } from "lucide-react";
+import { Calendar, Clock, MapPin, User } from "lucide-react";
 
 export function ScheduleSection() {
   const [activeDay, setActiveDay] = useState(0);
@@ -56,7 +56,7 @@ export function ScheduleSection() {
                   "relative px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 z-10",
                   activeDay === index
                     ? "text-white"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {activeDay === index && (
@@ -139,7 +139,7 @@ function ScheduleItemCard({
       transition={{ delay: index * 0.05 }}
       className={cn(
         "group relative border rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:shadow-lg",
-        getCardStyles(item.type)
+        getCardStyles(item.type),
       )}
     >
       <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
@@ -149,7 +149,7 @@ function ScheduleItemCard({
             "flex items-center gap-2 sm:w-32 shrink-0",
             isBreak
               ? "text-muted-foreground"
-              : "text-brand-purple font-semibold"
+              : "text-brand-purple font-semibold",
           )}
         >
           <Clock className="w-4 h-4" />
@@ -158,17 +158,49 @@ function ScheduleItemCard({
 
         {/* Content */}
         <div className="flex-grow">
-          <h3
-            className={cn(
-              "font-medium leading-tight",
-              isBreak
-                ? "text-base italic text-muted-foreground flex items-center gap-2"
-                : "text-lg sm:text-xl text-foreground"
+          <div className="flex flex-wrap items-center gap-2 mb-1">
+            <h3
+              className={cn(
+                "font-medium leading-tight",
+                isBreak
+                  ? "text-base italic text-muted-foreground flex items-center gap-2"
+                  : "text-lg sm:text-xl text-foreground",
+              )}
+            >
+              {item.topic}
+            </h3>
+            {item.status === "cancelled" && (
+              <span className="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-bold">
+                Cancelado
+              </span>
             )}
-          >
-            {item.topic}
-          </h3>
-          {/* Add type badge if not standard/break? Maybe just keep it clean */}
+            {item.status === "pending" && (
+              <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full font-bold">
+                Por confirmar
+              </span>
+            )}
+          </div>
+
+          {/* Speaker Info */}
+          {item.speaker && !isBreak && (
+            <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-1.5 font-medium text-foreground/80">
+                <span className="bg-brand-purple/10 p-1 rounded-full">
+                  <User className="w-3 h-3 text-brand-purple" />
+                </span>{" "}
+                {/* Using MapPin as generic user icon for now if User icon invalid, or just remove icon */}
+                {item.speaker}
+              </div>
+              {item.role && (
+                <>
+                  <span className="w-1 h-1 rounded-full bg-muted-foreground/40" />
+                  <span className="text-brand-pink font-medium">
+                    {item.role}
+                  </span>
+                </>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
