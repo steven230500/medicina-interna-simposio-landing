@@ -112,18 +112,17 @@ function ScheduleItemCard({
   index: number;
 }) {
   // Determine styles based on type
+  // Determine styles based on type
   const getCardStyles = (type: ScheduleItem["type"]) => {
     switch (type) {
       case "break":
         return "bg-secondary/30 border-transparent py-4 opacity-80 hover:opacity-100";
       case "workshop":
-        return "bg-brand-purple/10 border-brand-purple/20 hover:border-brand-purple/50";
+        return "bg-brand-purple/5 border-brand-purple/20 hover:border-brand-purple/50";
+      // Unified style for all other highlights to reduce color noise
       case "highlight-yellow":
-        return "bg-brand-yellow/10 border-brand-yellow/20 hover:border-brand-yellow/50";
       case "highlight-green":
-        return "bg-brand-turquoise/10 border-brand-turquoise/20 hover:border-brand-turquoise/50";
       case "highlight-red":
-        return "bg-brand-pink/10 border-brand-pink/20 hover:border-brand-pink/50";
       default: // standard
         return "bg-card border-border hover:border-brand-purple/50";
     }
