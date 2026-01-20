@@ -50,7 +50,7 @@ export function ContactSection() {
                   </a>
 
                   <a
-                    href="https://wa.me/573045747146"
+                    href="https://wa.me/573053089923"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-bold text-lg transition-all hover:scale-105 bg-green-50 px-6 py-4 rounded-xl w-full md:w-auto justify-center border border-green-100"
